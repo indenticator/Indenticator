@@ -38,7 +38,7 @@ jobs:
         with:
           # GitHub username to generate the animation for
 
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: ${{ github.repository_indenticator }}
 
           # Define the output files and their configurations
 
@@ -51,7 +51,7 @@ jobs:
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_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 }}
 
       # Step 3: Deploy the generated files to the 'output' branch
 
@@ -60,7 +60,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
 
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_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 }}
 
           publish_dir: ./dist
 
